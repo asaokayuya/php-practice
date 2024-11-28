@@ -9,14 +9,16 @@ echo $num."\n";
 echo $num/2;
 
 // Q3 日付操作
-$date = new DateTime('now');
-echo '現在の時刻は、'.$date->format('Y年m月d日 H時i分s秒').'です。';
+if(strcmp( date_default_timezone_get(), 'Asia/Tokyo' )) {
+    date_default_timezone_set('Asia/Tokyo');
+}
+echo '現在時刻は、'.date("Y年m月d日 H時i分s秒").'です。';
 
 // Q4 条件分岐-1 if文
-$device = 2;
-if ($device === 1) {
+$device = 'mac';
+if ($device === 'windows') {
     echo '使用OSは、windowsです。';
-}  if ($device === 2) {
+}  if ($device === 'mac') {
     echo '使用OSは、macです。';
 } else {
     echo 'どちらでもありません。';
@@ -24,11 +26,7 @@ if ($device === 1) {
 
 // Q5 条件分岐-2 三項演算子
 $age = 18;
-if ($age >= 18) {
-    $message = '成人です。';
-} else {
-    $message = '未成年です。';
-}
+$message = ($age >= 18)? '成人です。' :'未成年です。' ;
 
 echo $message;
 
