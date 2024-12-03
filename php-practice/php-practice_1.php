@@ -16,13 +16,13 @@ echo '現在時刻は、'.date("Y年m月d日 H時i分s秒").'です。';
 
 // Q4 条件分岐-1 if文
 $device = 'mac';
-if ($device === 'windows') {
-    echo '使用OSは、windowsです。';
-}  if ($device === 'mac') {
-    echo '使用OSは、macです。';
-} else {
-    echo 'どちらでもありません。';
+if ($device === 'windows' || $device === 'mac') {
+    $message = '使用OSは、'. $device .'です。';
+}else{
+    $message = 'どちらでもありません。';
 }
+
+echo $message;
 
 // Q5 条件分岐-2 三項演算子
 $age = 18;
@@ -81,8 +81,8 @@ $prefecture['大阪府'] = '大阪市';
 $prefecture_different = ['愛知県','大阪府'];
 
 foreach($prefecture as $prefecture_detail => $city) {
-    if(in_array($prefecture,$prefecture_different)) {
-        echo "$prefecture_different" . "は関東地方ではありません。\n";
+    if(in_array($prefecture_detail,$prefecture_different)) {
+        echo "$prefecture_detail" . "は関東地方ではありません。\n";
     }
     else{
         echo"$prefecture_detail".'の県庁所在地は'."$city"."です。\n";
@@ -92,17 +92,17 @@ foreach($prefecture as $prefecture_detail => $city) {
 // Q10 関数-1
 function hello($name)
 {
-    echo "$name"."さん、こんにちは。\n";
+    return $name."さん、こんにちは。\n";
 }
 
-hello('金谷');
-hello('安藤');
+echo hello('金谷');
+echo hello('安藤');
 
 // Q11 関数-2
 function calcTaxInPrice($price)
 {
-    $taxinprice = $price*1.1;
-    return $taxinprice;
+    $Taxinprice = $price*1.1;
+    return $Taxinprice;
 }
 
 $price = 1000;

@@ -106,6 +106,7 @@ echo $date->format('Y-m-d');
 $time1 = new DateTime('2024-11-21');
 $time2 = new DateTime('1992-04-25');
 
-echo 'あの日から'.$time2->diff($time1)->format('%a').'日経過しました。';
+$diff = $time1->diff($time2);
+echo $diff->format('あの日から%a日経過しました。');
 
 ?>
