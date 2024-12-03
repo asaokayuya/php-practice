@@ -99,14 +99,14 @@ echo hello('金谷');
 echo hello('安藤');
 
 // Q11 関数-2
-function calcTaxInPrice($price)
+function calcTaxInPrice($money)
 {
-    $Taxinprice = $price*1.1;
+    $taxinPrice = $money*1.1;
     return $Taxinprice;
 }
 
-$price = 1000;
-echo $price.'の商品の税込価格は'. calcTaxInPrice($price) .'円です。';
+$money = 1000;
+echo $money.'の商品の税込価格は'. calcTaxInPrice($money) .'円です。';
 
 // Q12 関数とif文
 function distinguishNum ($number) {
